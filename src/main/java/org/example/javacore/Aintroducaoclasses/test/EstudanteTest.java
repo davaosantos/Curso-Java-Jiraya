@@ -1,6 +1,6 @@
-package org.example.javacore.introducaoclasses.test;
+package org.example.javacore.Aintroducaoclasses.test;
 
-import org.example.javacore.introducaoclasses.dominio.Estudante;
+import org.example.javacore.Aintroducaoclasses.dominio.Estudante;
 
 public class EstudanteTest {
 
