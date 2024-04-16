@@ -8,6 +8,10 @@ public class Estudante {
 
     public char sexo;
 
+    public void imprime(){
+        System.out.println(this.nome);
+    }
+
     public String getNome() {
         return nome;
     }
