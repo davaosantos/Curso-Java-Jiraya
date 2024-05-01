@@ -12,6 +12,8 @@ public class Funcionario {
 
     private Double[] salarios;
 
+    private Double media = 0.0;
+
     public Funcionario() {
     }
 
@@ -71,8 +73,16 @@ public class Funcionario {
             return;
         }
 
-        Double vlTotal = Arrays.stream(this.salarios).mapToDouble(salario -> salario).sum();
-        System.out.println("Media salarial " + (vlTotal / this.salarios.length));
+        for (double salario : salarios){
+            media += salario;
+        }
+
+        media /= salarios.length;
+
+        System.out.println("\n Média Salarial " + media);
     }
 
+    public Double getMedia() {
+        return media;
+    }
 }
