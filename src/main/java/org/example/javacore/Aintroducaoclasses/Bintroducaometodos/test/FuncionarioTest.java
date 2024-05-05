@@ -14,8 +14,6 @@ public class FuncionarioTest {
         funcionario.imprimeMediaSalarial();
     }
 
-
-
     public static void imprimeFuncionario(List<Funcionario> funcionarios){
         funcionarios.stream().forEach(funcionario -> {
             System.out.println("\n " + funcionario);
