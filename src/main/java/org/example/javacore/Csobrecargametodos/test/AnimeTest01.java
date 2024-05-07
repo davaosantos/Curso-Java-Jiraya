@@ -5,7 +5,7 @@ import org.example.javacore.Csobrecargametodos.dominio.Anime;
 public class AnimeTest01 {
 
     public static void main(String[] args) {
-        Anime anime = new Anime();
+        Anime anime = new Anime("Davaao");
         anime.init("Naruto", "TV", 5);
         anime.init("Naruto", "TV", 5, "Ação");
         anime.imprime();
