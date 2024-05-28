@@ -6,13 +6,21 @@ public class Carro {
 
     private double velocidadeMaxima;
 
-    public static double velocidadeLimite = 250;
+    private static double velocidadeLimite = 250;
 
     public void imprime(){
         System.out.println("------");
         System.out.println("Nome : " + this.nome);
         System.out.println("Velocidade Máxima : " + this.velocidadeMaxima);
         System.out.println("Velocidade Limite : " + Carro.velocidadeLimite);
+    }
+
+    public static void setVelocidadeLimite(Double velocidadeLimite){
+        Carro.velocidadeLimite = velocidadeLimite;
+    }
+
+    public static Double getVelocidadeLimite(){
+        return velocidadeLimite;
     }
 
     public Carro() {
