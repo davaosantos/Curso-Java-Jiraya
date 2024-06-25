@@ -7,8 +7,21 @@ public class Pessoa extends Object{
 
     protected Endereco endereco;
 
+    static{
+        System.out.println("Dentro do bloco estático de pessoa");
+    }
+
+    //Bloco não estático
+    {
+        System.out.println("Dentro do bloco de inicialização de pessoa NÃO estático 1");
+    }
+
+    {
+        System.out.println("Dentro do bloco de inicialização de pessoa NÃO estático 2");
+    }
+
     public Pessoa(String nome){
-        super();
+        System.out.println("Dentro do construtor de pessoa");
         this.nome = nome;
     }
 
