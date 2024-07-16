@@ -9,6 +9,15 @@ public enum TipoCliente {
 
     private String nmRelatorio;
 
+    public static TipoCliente tipoClientePorNomeRelatorio(String nomeRelatorio){
+        for (TipoCliente tipoCliente : values()){
+            if (tipoCliente.getNmRelatorio().equalsIgnoreCase(nomeRelatorio)){
+                return tipoCliente;
+            }
+        }
+        return null;
+    }
+
     TipoCliente(int valor, String nmRelatorio) {
         this.valor = valor;
         this.nmRelatorio = nmRelatorio;
