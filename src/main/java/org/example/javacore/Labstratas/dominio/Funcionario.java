@@ -8,6 +8,9 @@ public abstract class Funcionario {
     public Funcionario(String nome, Double salario) {
         this.nome = nome;
         this.salario = salario;
+        calculaBonos();
     }
+
+    public abstract void calculaBonos();
 
 }
