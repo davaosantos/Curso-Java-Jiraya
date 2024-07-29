@@ -1,5 +1,6 @@
 package org.example.javacore.MInterfaces.test;
 
+import org.example.javacore.MInterfaces.dominio.DataLoader;
 import org.example.javacore.MInterfaces.dominio.DatabaseLoader;
 import org.example.javacore.MInterfaces.dominio.FileLoader;
 
@@ -11,6 +12,16 @@ public class DataLoaderTest01 {
 
         databaseLoade.load();
         fileLoader.load();
+
+        databaseLoade.remove();
+        fileLoader.remove();
+
+        databaseLoade.checkPermission();
+        fileLoader.checkPermission();
+
+        DatabaseLoader.retrieveMaxDataSize();
+        DataLoader.retrieveMaxDataSize();
+
 
     }
 }
