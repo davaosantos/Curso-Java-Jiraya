@@ -22,6 +22,5 @@ public class DataLoaderTest01 {
         DatabaseLoader.retrieveMaxDataSize();
         DataLoader.retrieveMaxDataSize();
 
-
     }
 }
