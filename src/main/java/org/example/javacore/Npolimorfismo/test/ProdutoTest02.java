@@ -16,7 +16,6 @@ public class ProdutoTest02 {
         System.out.println(produto2.getNome());
         System.out.println(produto2.getValor());
         System.out.println(produto2.calcularImposto());
-        System.out.println(produto2.getDataValidade);
 
         Tomate tomate = new Tomate("AMERIC", 15.0);
         tomate.getDataValidade();

@@ -10,9 +10,9 @@ public class ProdutoTest01 {
         Computador computador = new Computador("NUC10i7", 11000.0);
         Tomate tomate = new Tomate("Tomate seco", 6.0);
 
-        CalculadoraImposto.calcularImpostoComputador(computador);
+        CalculadoraImposto.calcularImposto(computador);
         System.out.println("------------------");
-        CalculadoraImposto.calcularImpostoTomate(tomate);
+        CalculadoraImposto.calcularImposto(tomate);
 
 
     }
