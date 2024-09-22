@@ -9,6 +9,14 @@ public class NumberFormatTest01 {
         Locale localeBR = new Locale("pt", "BR");
         Locale localeJP = Locale.JAPAN;
         Locale localeIT = Locale.ITALY;
+//        Locale[] localeArr = Locale.getAvailableLocales();
+
+//        for (Locale locale : localeArr) {
+//            System.out.print(locale.getDisplayLanguage());
+//            System.out.println();
+//            System.out.print(locale.getDisplayCountry());
+//        }
+
 
         NumberFormat[] nfa = new NumberFormat[4];
 
