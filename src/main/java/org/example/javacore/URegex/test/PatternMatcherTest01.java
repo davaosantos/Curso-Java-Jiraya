@@ -7,7 +7,7 @@ public class PatternMatcherTest01 {
     public static void main(String[] args) {
         String regex = "ab";
         String text = "abaaba";
-        Pattern pattern = Pattern.compile("regex");
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         System.out.println("texto:   " + text);
         System.out.println("Indice : 12345789");
