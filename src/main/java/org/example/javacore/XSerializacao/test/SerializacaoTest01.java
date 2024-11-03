@@ -1,6 +1,7 @@
 package org.example.javacore.XSerializacao.test;
 
 import org.example.javacore.XSerializacao.dominio.Aluno;
+import org.example.javacore.XSerializacao.dominio.Turma;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,7 +13,9 @@ import java.nio.file.Paths;
 public class SerializacaoTest01 {
     public static void main(String[] args) {
         Aluno aluno = new Aluno(1L, "David", "repolho123");
-//        serializar(aluno);
+        Turma turma = new Turma("Mouralistas");
+        aluno.setTurma(turma);
+        serializar(aluno);
         deserializar();
     }
 
@@ -31,7 +34,7 @@ public class SerializacaoTest01 {
             Aluno aluno = (Aluno) ois.readObject();
             System.out.println(aluno);
         }catch (IOException | ClassNotFoundException exception){
-
+            exception.printStackTrace();
         }
     }
 }
