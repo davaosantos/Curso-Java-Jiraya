@@ -33,6 +33,17 @@ public class SmartPhone {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+
+        //Caso o objeto seja nulo , não tem como ser igual
+        if (obj == null) return false;
+
+        //Caso façam referencia para o msm objeto , retorna true tbm
+        if (this == obj) return true;
+
+        if (this.getClass() != obj.getClass()) return false; // Verificar se é a mesma classe , no caso Smartphone
+
+        SmartPhone smartph = (SmartPhone) obj; // como não caiu no return , sei que é um tipo Smarthpone
+
+        return this.serialNumber != null && this.serialNumber.equals(smartph.serialNumber); // Caso não seja nulo o serialNumber e seja igual ao do parametro , true
     }
 }
