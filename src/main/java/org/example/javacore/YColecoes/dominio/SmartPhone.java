@@ -27,4 +27,12 @@ public class SmartPhone {
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    // Reflexivo : x.equals(x) tem que ser true para tudo que for diferente de null
+    // Simetrico: para x e y diferenstes de null , se x.equals(y) == true logo , y.equals(x) == true
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
