@@ -10,6 +10,7 @@ public class EqualsTest01 {
 //        System.out.println(nome == nome2); // true pois faz referencia ao mesmo objeto em memória , estão ambos no pool de String
 //        System.out.println(nome == nome3); // False pois cria outro objeto no heap de memoria
 //        System.out.println(nome.equals(nome3)); // Aqui sim compara objeto e valor da String
+//Hashcode -> Valida pelo Hash(Indice gerado) , caso não consiga identificar por ele , verifica com o equals
 
 
         //Ambos iguais
