@@ -46,4 +46,12 @@ public class SmartPhone {
 
         return this.serialNumber != null && this.serialNumber.equals(smartph.serialNumber); // Caso não seja nulo o serialNumber e seja igual ao do parametro , true
     }
+
+    @Override
+    public String toString() {
+        return "SmartPhone{" +
+                "serialNumber='" + serialNumber + '\'' +
+                ", marca='" + marca + '\'' +
+                '}';
+    }
 }
