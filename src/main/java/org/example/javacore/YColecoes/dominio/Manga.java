@@ -2,18 +2,41 @@ package org.example.javacore.YColecoes.dominio;
 
 import java.util.Objects;
 
-public class Manga {
+public class Manga  implements Comparable<Manga> {
     private Long id;
     private String nome;
 
-    private Double preco;
+    private double preco;
 
-    public Manga(Long id, String nome, Double preco) {
+    public Manga(Long id, String nome, double preco) {
         Objects.requireNonNull(id);
         Objects.requireNonNull(nome);
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+    }
+
+    @Override
+    public int compareTo(Manga mangaOutro) {
+        //Negativo -> Se o this for menor < que o outroManga
+        //Igual -> Retorna 0 se o this for igual ao outroManga
+        //Positivo -> Retorna positivo se o this for > que o outroManga
+
+//        if (this.id < mangaOutro.getId()){
+//            return -1;
+//        }
+//        else if (this.id.equals(mangaOutro.getId())){
+//            return 0;
+//        }
+//        else{
+//            return 1;
+//        }
+
+//        return Double.compare(this.preco, mangaOutro.getPreco());
+
+        return this.nome.compareTo(mangaOutro.getNome());
+//        return Double.valueOf(this.preco).compareTo(mangaOutro.getPreco());
+//        return this.getId().compareTo(mangaOutro.id);
     }
 
     public Long getId() {
@@ -32,11 +55,11 @@ public class Manga {
         this.nome = nome;
     }
 
-    public Double getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
