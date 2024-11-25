@@ -4,7 +4,15 @@ import org.example.javacore.YColecoes.dominio.Manga;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+class MangaByIdComparator implements Comparator<Manga> {
+    @Override
+    public int compare(Manga m1, Manga m2) {
+        return m1.getId().compareTo(m2.getId());
+    }
+}
 
 public class MangaSortTest01 {
 
@@ -26,6 +34,15 @@ public class MangaSortTest01 {
         Collections.sort(mangas);
 
         System.out.println("--------------");
+
+        for (Manga manga : mangas) {
+            System.out.println(manga);
+        }
+
+        //Ordenando por ID com o comparator
+//        Collections.sort(mangas, new MangaByIdComparator());
+        mangas.sort(new MangaByIdComparator());
+        System.out.println("-------------- COM COMPARATOR ---------");
 
         for (Manga manga : mangas) {
             System.out.println(manga);
