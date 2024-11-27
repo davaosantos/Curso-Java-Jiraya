@@ -29,6 +29,8 @@ public class Manga  implements Comparable<Manga> {
         //Igual -> Retorna 0 se o this for igual ao outroManga
         //Positivo -> Retorna positivo se o this for > que o outroManga
 
+        return this.nome.compareTo(mangaOutro.getNome());
+
 //        if (this.id < mangaOutro.getId()){
 //            return -1;
 //        }
@@ -41,7 +43,7 @@ public class Manga  implements Comparable<Manga> {
 
 //        return Double.compare(this.preco, mangaOutro.getPreco());
 
-        return this.nome.compareTo(mangaOutro.getNome());
+
 //        return Double.valueOf(this.preco).compareTo(mangaOutro.getPreco());
 //        return this.getId().compareTo(mangaOutro.id);
     }
