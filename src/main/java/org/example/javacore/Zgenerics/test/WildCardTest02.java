@@ -17,19 +17,19 @@ public class WildCardTest02 {
     private static void printConsulta(List<? extends Animal> animals){
 
         Animal animal = new Cachorro();
-        Cachorro cachorro = new Animal();
-        for (Animal animal : animals) {
-            System.out.println(animal);
-        }
+//        Cachorro cachorro = new Animal();
+//        for (Animal animal : animals) {
+//            System.out.println(animal);
+//        }
 
-        Animal animal = new Cachorro();
-        animals.add(new Cachorro());
+//        Animal animal = new Cachorro();
+//        animals.add(new Cachorro());
 
         List<Animal> animals1 = new ArrayList<>();
         List<Cachorro> cachorros = new ArrayList<>();
         List<Object> objects = new ArrayList<>();
         printConsultaAnimal(animals1);
-        printConsultaAnimal(cachorros);
+//        printConsultaAnimal(cachorros);
 //        printConsultaAnimal(objects);
 
     }
