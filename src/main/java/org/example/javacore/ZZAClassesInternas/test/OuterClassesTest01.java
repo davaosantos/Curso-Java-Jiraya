@@ -3,6 +3,7 @@ package org.example.javacore.ZZAClassesInternas.test;
 public class OuterClassesTest01 {
     private String name = "Goku";
 
+    //Nested Classes
     class Inner{
         public void printOuterClassAttribute(){
             System.out.println(name);
