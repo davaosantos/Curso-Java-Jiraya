@@ -11,7 +11,12 @@ public class ComportamentoPorParametroTest03 {
     private static List<Car> carList = new ArrayList<>(List.of(new Car(2011, "Green"), new Car(2008, "White"), new Car(2020, "Black")));
 
     public static void main(String[] args) {
-        List<Car> greenCars = filter(carList, car -> car.getColor().equals("Green"));
+
+        //Dessa forma só para exemplificar
+        List<Car> greenCars = filter(carList, (Car car) -> {
+            return car.getColor().equals("Green");
+        });
+
         List<Car> blackCars = filter(carList, car -> car.getColor().equals("Black"));
         List<Car> whiteCars = filter(carList, car -> car.getColor().equals("White"));
         List<Car> oldCars = filter(carList, car -> car.getYear() < 2016);
@@ -23,14 +28,14 @@ public class ComportamentoPorParametroTest03 {
         System.out.println(oldCars);
 
         System.out.println("Validação de numeros");
-        List<Integer> integers = List.of(1,2,3,4,5,6,7,8,9,10);
-        System.out.println(filter(integers, i -> i % 2 == 0 ));
+        List<Integer> integers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        System.out.println(filter(integers, i -> i % 2 == 0));
     }
 
-    private static <T> List<T> filter(List<T> listParam, Predicate<T> predicate){
+    private static <T> List<T> filter(List<T> listParam, Predicate<T> predicate) {
         List<T> filteredList = new ArrayList<>();
         for (T e : listParam) {
-            if (predicate.test(e)){
+            if (predicate.test(e)) {
                 filteredList.add(e);
             }
         }

@@ -1,6 +1,7 @@
 package org.example.javacore.ZZBComportamento.test;
 
 import org.example.javacore.ZZBComportamento.dominio.Car;
+import org.example.javacore.ZZBComportamento.interfaces.CarPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
