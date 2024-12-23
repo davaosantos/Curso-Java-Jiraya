@@ -14,14 +14,14 @@ public class OptionalTest01 {
         System.out.println(o2);
 
         System.out.println("--------OPTIONAL VAZIO -----");
-        Optional<String> nameOptional = Optional.ofNullable(findName("Alisson"));
+        Optional<String> nameOptional = findName("Alisson");
         System.out.println(nameOptional);
 
         String vazio = nameOptional.orElse("Vazio");
         System.out.println(vazio);
 
         System.out.println("--------- OPTIONAL ENCONTRADO -------");
-        Optional<String> nameOptionalEncontrado = Optional.ofNullable(findName("Sasuke"));
+        Optional<String> nameOptionalEncontrado = findName("Sasuke");
         System.out.println(nameOptionalEncontrado);
         nameOptionalEncontrado.ifPresent(s -> System.out.println(s.toUpperCase()));
 
