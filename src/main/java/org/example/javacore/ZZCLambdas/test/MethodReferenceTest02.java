@@ -1,26 +1,22 @@
 package org.example.javacore.ZZCLambdas.test;
 
+
 import org.example.javacore.ZZCLambdas.dominio.Anime;
 import org.example.javacore.ZZCLambdas.dominio.service.AnimeComparators;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//Reference to a static method
-public class MethodReferenceTest01 {
-
+//Reference to an instance method of a particular Object
+public class MethodReferenceTest02 {
     public static void main(String[] args) {
+        AnimeComparators animeComparators = new AnimeComparators();
         List<Anime> animeList = new ArrayList<>(List.of(new Anime("Naruto", 43), new Anime("Bersek", 33),
                 new Anime("Nanatsu", 10), new Anime("One Piece", 300)));
 
-//        Collections.sort(animeList, (a1, a2) -> a1.getTitle().compareTo(a2.getTitle()));
-
-        animeList.sort(AnimeComparators::compareByTitle);
+        animeList.sort(animeComparators::compareByEpisodesNonStatic);
+        animeList.sort((a1, a2) -> animeComparators.compareByEpisodesNonStatic(a1, a2));
         System.out.println(animeList);
 
-        System.out.println("----------");
-        System.out.println("Ordenando por episodios : ");
-        animeList.sort(AnimeComparators::compareByEpisodes);
-        System.out.println(animeList);
     }
 }
