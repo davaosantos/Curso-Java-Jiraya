@@ -1,5 +1,7 @@
 package org.example.javacore.ZZEStreams.dominio;
 
+import java.util.Objects;
+
 public class LightNovel {
 
     private String title;
@@ -19,6 +21,19 @@ public class LightNovel {
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LightNovel that = (LightNovel) o;
+        return Double.compare(price, that.price) == 0 && Objects.equals(title, that.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, price);
     }
 
     @Override
