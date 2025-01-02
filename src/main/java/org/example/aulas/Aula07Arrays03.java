@@ -1,5 +1,6 @@
 package org.example.aulas;
 
+//teste do commit
 public class Aula07Arrays03 {
 
     public static void main(String[] args) {
