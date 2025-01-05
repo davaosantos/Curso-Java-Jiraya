@@ -1,1 +1,1 @@
-Curso para aprendizado e prática de conceitos relacionados ao java , na master está até uma aula relacionada a parte de arquivos , e na branch seguinte está em aulas posteriores , pois avancei para a parte que é mais necessária para mim. 
+Curso para aprendizado e prática de conceitos relacionados ao java , na master está até uma aula relacionada a parte de arquivos, e na branch seguinte está a partir da aula 159 que julguei mais importante para mim no momento . 
