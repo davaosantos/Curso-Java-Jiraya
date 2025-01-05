@@ -17,7 +17,6 @@ public class StreamTest12 {
             new LightNovel("Kumo desuga", 1.99, Category.FANTASY),
             new LightNovel("Kumo desuga", 1.99, Category.FANTASY),
             new LightNovel("Monogatari", 4, Category.ROMANCE)
-
     ));
 
     public static void main(String[] args) {
