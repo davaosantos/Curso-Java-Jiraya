@@ -4,7 +4,7 @@ import org.example.javacore.ZZFThreads.test.dominio.Account;
 
 public class ThreadAccountTest01 implements Runnable{
 
-    private Account account = new Account();
+    private final Account account = new Account();
 
     public static void main(String[] args) {
 
@@ -19,7 +19,11 @@ public class ThreadAccountTest01 implements Runnable{
     @Override
     public void run() {
         for (int i = 0; i < 5; i++){
-            withdrawal(10);
+            try {
+                withdrawal(10);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
             if (account.getBalance() < 0){
                 System.out.println("FODEU");
@@ -27,14 +31,25 @@ public class ThreadAccountTest01 implements Runnable{
         }
     }
 
-    private void withdrawal(int amount){
-        if (account.getBalance() >= amount){
-            System.out.println(getThreadName() + " está indo sacar dinheiro");
-            account.withdrawal(amount);
-            System.out.println(getThreadName() + " completou o saque , valor atual da conta " + account.getBalance());
-        }else{
-            System.out.println("Sem dinheiro para " + getThreadName() + " efetuar o saque " + account.getBalance());
+    private static synchronized void print(){
+        synchronized (ThreadAccountTest01.class){}
+    }
+
+    private void withdrawal(int amount) throws InterruptedException {
+
+        System.out.println(getThreadName() + " ######### fora do synchronized");
+        synchronized (account){
+            System.out.println(getThreadName() + " dentro do synchronized");
+            if (account.getBalance() >= amount){
+                System.out.println(getThreadName() + " está indo sacar dinheiro");
+                account.withdrawal(amount);
+
+                System.out.println(getThreadName() + " completou o saque , valor atual da conta " + account.getBalance());
+            }else{
+                System.out.println("Sem dinheiro para " + getThreadName() + " efetuar o saque " + account.getBalance());
+            }
         }
+
     }
 
     private static String getThreadName() {
