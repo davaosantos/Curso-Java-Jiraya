@@ -1,5 +1,6 @@
 package org.example.javacore.ZZGConcorrencia.test;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -12,8 +13,16 @@ class Counter{
     private Lock lock = new ReentrantLock();
 
     void increment(){
-        count++;
-        atomicInteger.incrementAndGet();
+//        lock.tryLock(3, TimeUnit.SECONDS)
+        lock.lock();
+
+        try{
+            count++;
+            atomicInteger.incrementAndGet();
+        }finally {
+            lock.unlock();
+        }
+
     }
 
     public AtomicInteger getAtomicInteger() {
