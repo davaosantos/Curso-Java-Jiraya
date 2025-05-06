@@ -4,7 +4,7 @@ import java.util.concurrent.*;
 
 public class FutureTest01 {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<Double> dolarRequest = executorService.submit(() -> {
             TimeUnit.SECONDS.sleep(15);
@@ -12,9 +12,15 @@ public class FutureTest01 {
         });
 
         System.out.println(doSomething());
-        Double dolarResponse = dolarRequest.get(3, TimeUnit.SECONDS);
+        Double dolarResponse = null;
+        try {
+            dolarResponse = dolarRequest.get(3, TimeUnit.SECONDS);
+        } catch (TimeoutException e) {
+            throw new RuntimeException(e);
+        }finally {
+            executorService.shutdown();
+        }
         System.out.println("Dollar : " + dolarResponse);
-        executorService.shutdown();
     }
 
     //Será executada pela Thread Main ao mesmo tempo
