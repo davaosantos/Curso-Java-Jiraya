@@ -2,7 +2,7 @@ package org.example.javacore.ZZHPadroesdeprojeto.dominio;
 
 public class CurrencyFactory {
 
-    public static Currency newCurrency(Country country) {
+    public static Currency newCurrency(CountryEnum country) {
 
         switch (country) {
             case BRASIL:

@@ -1,5 +1,5 @@
 package org.example.javacore.ZZHPadroesdeprojeto.dominio;
 
-public enum Country {
+public enum CountryEnum {
     BRASIL,USA
 }
